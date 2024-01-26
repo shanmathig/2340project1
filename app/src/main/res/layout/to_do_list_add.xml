@@ -23,10 +23,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_course_name"
+                android:id="@+id/ed_task_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/course_name"
+                android:hint="Task"
                 android:maxLength="255"
                 android:maxLines="1"
                 android:textColor="?attr/colorPrimary"
@@ -34,14 +34,34 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/spinner_day"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingVertical="12dp"
-            android:entries="@array/day"
-            />
+            android:layout_marginTop="30dp"
+            android:text="    Select Date:"
+            android:textColor="#514F4F"
+            android:textSize="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="JAN 25 2024"
+            android:textSize="match_parent"
+            android:textColor="#514F4F"
+            style="?android:spinnerStyle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="10dp"
+            android:onClick="openDatePicker"/>
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,37 +69,6 @@
             android:gravity="center_vertical"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/ib_start_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_time"
-                android:layout_gravity="center"
-                android:contentDescription="@string/start_time" />
-
-            <TextView
-                android:id="@+id/tv_start_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textPrimary"
-                android:text="@string/start_time"/>
-
-            <ImageButton
-                android:id="@+id/ib_end_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_time"
-                android:layout_marginStart="16dp"
-                android:contentDescription="@string/end_time" />
-
-            <TextView
-                android:id="@+id/tv_end_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/end_time"
-                android:textColor="@color/textPrimary"/>
 
 
         </LinearLayout>
@@ -91,10 +80,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_lecturer"
+                android:id="@+id/ed_course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/lecturer"
+                android:hint="Course"
                 android:maxLength="255"
                 android:maxLines="1"
                 android:textColor="?attr/colorPrimary"
@@ -109,7 +98,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_note"
+                android:id="@+id/ed_note_task"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/note"
@@ -120,5 +109,11 @@
                 android:textColorHint="?attr/colorPrimary" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
